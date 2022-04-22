@@ -1,19 +1,30 @@
 {% extends 'basic.html' %} {% block contain %}
 <style>
 body {
-	background-image: url(https://a-static.besthdwallpaper.com/tractor-on-a-filed-wallpaper-2560x2048-553_33.jpg);
+	background-image: url(/static/image/i1.jpg);
 	height: auto;
 	width: auto;
 	background-repeat: initial;
 	backdrop-filter: blur(20px);
 }
+.oldtractordiv{
+    width: 368px;
+    height: 590px;
+    margin-left: 20px;
+}
+@media only screen and (max-width: 480px) {
+    .oldtractordiv{
+    	width: auto;
+    height: auto;
+    }
+}
 </style>
 <div class="row" style="padding-top: 100px;">
 	<div class="grid-view"></div> {% for dest1 in oldtractor %}
 	<!-- <div class="grid-view"> -->
-	<div class="p-4 md:w-1/3" style="     width: 368px;height: 590px;margin-left: 20px;">
-		<div class="  h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-			<div class="sold1 {% if dest1.is_sold_out %} soldout {% endif %}"> <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{dest1.upload.url}}" alt="blog" style=" width: 340px; height: 250px;"> </div>
+		<div class="p-4 md:w-1/3 oldtractordiv">
+			<div class="  h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+				<div class="sold1 {% if dest1.is_sold_out %} soldout {% endif %}"> <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{dest1.upload.url}}" alt="blog" style=" width: 340px; height: 250px;"> </div>
 			<!--            <a class="soldout" href={{dest1.Regno}}>-->
 			<!--                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{dest1.upload.url}}"-->
 			<!--                     alt="blog"-->
@@ -50,7 +61,7 @@ body {
 						<div style="text-align:left"> <a href="/calc/inspection8/" type="button" class="btn btn-primary" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;">AutoReport</a> {% endif %}
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;"> Images </button>
 						</div>
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1" style="margin-left: 66px;margin-top: 6px;width: 99px;height: 40px;"> Add Bid </button>
+<!--						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1" style="margin-left: 66px;margin-top: 6px;width: 99px;height: 40px;"> Add Bid </button>-->
 						<!-- Modal -->
 						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-centered" role="document">
@@ -118,34 +129,34 @@ body {
 		<!--            Add Bid-->
 		<!--        </button>-->
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalCenterTitle1">Modal title</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-					</div>
-					<div class="modal-body" style="width: 503px;height: 141px;">
-<!--						<div class="md-form my-2">-->
-<!--							<input type="hidden" id="validBid0" value="1500000">-->
-<!--							<input type="text" id="bidAmt0" name="bidamount" class="form-control" value="0">-->
-<!--							<div>-->
-<!--								<div class="modal-footer">-->
-<!--									<button type="button" class="btn btn-primary" style="margin-left: 99px;border-top-width: 0px;margin-top: 0px;">Submit </button>-->
-<!--								</div>-->
-							 <tr>
-                <form action="validate">
-                    <td>Entre Amount for Bid :<input type="hidden" name="id" value={{item.id}}></td>
-                    <td><input type="number" name="bidrs" class="field" placeholder="Enter your amount" min={{dest1.currentPrice}}></td>
-                </tr> <tr><td></td><td>
-                    <input type="submit" class="btt third" value="Bid now">
-                    </form></td></tr>
-            </table>
-        </center>
-        </form></div>
-						</div>
-					</div>
-				</div>
-			</div>
+<!--		<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
+<!--			<div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--				<div class="modal-content">-->
+<!--					<div class="modal-header">-->
+<!--						<h5 class="modal-title" id="exampleModalCenterTitle1">Modal title</h5>-->
+<!--						<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>-->
+<!--					</div>-->
+<!--					<div class="modal-body" style="width: 503px;height: 141px;">-->
+<!--&lt;!&ndash;						<div class="md-form my-2">&ndash;&gt;-->
+<!--&lt;!&ndash;							<input type="hidden" id="validBid0" value="1500000">&ndash;&gt;-->
+<!--&lt;!&ndash;							<input type="text" id="bidAmt0" name="bidamount" class="form-control" value="0">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div>&ndash;&gt;-->
+<!--&lt;!&ndash;								<div class="modal-footer">&ndash;&gt;-->
+<!--&lt;!&ndash;									<button type="button" class="btn btn-primary" style="margin-left: 99px;border-top-width: 0px;margin-top: 0px;">Submit </button>&ndash;&gt;-->
+<!--&lt;!&ndash;								</div>&ndash;&gt;-->
+<!--							 <tr>-->
+<!--                <form action="validate">-->
+<!--                    <td>Entre Amount for Bid :<input type="hidden" name="id" value={{item.id}}></td>-->
+<!--                    <td><input type="number" name="bidrs" class="field" placeholder="Enter your amount" min={{dest1.currentPrice}}></td>-->
+<!--                </tr> <tr><td></td><td>-->
+<!--                    <input type="submit" class="btt third" value="Bid now">-->
+<!--                    </form></td></tr>-->
+<!--            </table>-->
+<!--        </center>-->
+<!--        </form></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
 		</div> {% endfor %} </div>
 </div> {% endblock %} </div>

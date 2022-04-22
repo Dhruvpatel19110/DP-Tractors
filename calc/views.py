@@ -5,7 +5,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 
-from .models import Stoke, Index, OldTractor, NewUserForm, ContactEnquiry, Gallery_image
+from .models import Stoke, Index, OldTractor, NewUserForm, ContactEnquiry, \
+    Gallery_image
 
 
 @login_required(login_url=reverse_lazy('calc:login'))
@@ -38,7 +39,9 @@ def SaveCustomer(request):
         contact = request.POST.get('contact')
         village = request.POST.get('village')
         description = request.POST.get('name')
-        cd = ContactEnquiry(name=name, Phone_number=contact, Village_name=village, Description=description, )
+        cd = ContactEnquiry(name=name, Phone_number=contact,
+                            Village_name=village,
+                            Description=description, )
         cd.save()
     return render(request, 'Contactus.html')
 
@@ -93,9 +96,11 @@ def register_request(request):
             # login(request, user)
             messages.success(request, "Registration successful.")
             return redirect("index")
-        messages.error(request, "Unsuccessful registration. Invalid information.")
+        messages.error(request,
+                       "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
-    return render(request=request, template_name="register.html", context={"register_form": form})
+    return render(request=request, template_name="register.html",
+                  context={"register_form": form})
 
 
 def login_request(request):
@@ -107,7 +112,8 @@ def login_request(request):
         # request.session['user'] = user.username
         if user is not None:
             login(request, user)
-            messages.success(request, f"you are successfully logging {username}.")
+            messages.success(request,
+                             f"you are successfully logging {username}.")
             return redirect("index")
         else:
             messages.error(request, "Invalid username or password.")
@@ -150,7 +156,9 @@ def biditem(request):
 #     else:
 #         mail = item_obj.ownermail
 #         subject = "Online Bidding"
-#         msg = "Congratulations your item is bidded by " + bidder.email + ", By INR rs = " + value + ". Contact your buyer by email Thank You for using our app."
+#         msg = "Congratulations your item is bidded by " + bidder.email + "
+#         , By INR rs = " + value + ". Contact your buyer by email Thank You for
+#         using our app."
 #         to = mail
 #         # res     = send_mail(subject, msg, "bidmafia007@gmail.com", [to])
 #
