@@ -1,0 +1,328 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+
+
+<!--{% load static %}-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>User Registration</title>-->
+<!--    <style>-->
+<!--                *, *:before, *:after {-->
+<!--                    -moz-box-sizing: border-box;-->
+<!--                    -webkit-box-sizing: border-box;-->
+<!--                    box-sizing: border-box;-->
+<!--                }-->
+
+<!--                body {-->
+<!--                    font-family: 'Nunito', sans-serif;-->
+<!--                    color: #384047;-->
+<!--                }-->
+
+<!--                form {-->
+<!--                    max-width: 300px;-->
+<!--                    margin: left;-->
+<!--                    padding: 10px 20px;-->
+<!--                    background: #f4f7f8;-->
+<!--                    border-radius: 8px;-->
+<!--                    padding-top: auto;-->
+<!--                }-->
+
+<!--                h1 {-->
+<!--                    margin: 0 0 30px 0;-->
+<!--                    text-align: center;-->
+<!--                }-->
+
+<!--                input[type="text"],-->
+<!--                input[type="password"],-->
+<!--                input[type="date"],-->
+<!--                input[type="datetime"],-->
+<!--                input[type="email"],-->
+<!--                input[type="number"],-->
+<!--                input[type="search"],-->
+<!--                input[type="tel"],-->
+<!--                input[type="time"],-->
+<!--                input[type="url"],-->
+<!--                textarea,-->
+<!--                select {-->
+<!--                    background: rgba(255,255,255,0.1);-->
+<!--                    border: none;-->
+<!--                    font-size: 16px;-->
+<!--                    height: auto;-->
+<!--                    margin: 0;-->
+<!--                    outline: 0;-->
+<!--                    padding: 15px;-->
+<!--                    width: 100%;-->
+<!--                    background-color: #e8eeef;-->
+<!--                    color: #8a97a0;-->
+<!--                    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;-->
+<!--                    margin-bottom: 30px;-->
+<!--                }-->
+
+<!--                input[type="radio"],-->
+<!--                input[type="checkbox"] {-->
+<!--                    margin: 0 4px 8px 0;-->
+<!--                }-->
+
+<!--                select {-->
+<!--                    padding: 6px;-->
+<!--                    height: 32px;-->
+<!--                    border-radius: 2px;-->
+<!--                }-->
+
+<!--                button {-->
+<!--                    padding: 19px 39px 18px 39px;-->
+<!--                    color: #FFF;-->
+<!--                    background-color: #4bc970;-->
+<!--                    font-size: 18px;-->
+<!--                    text-align: center;-->
+<!--                    font-style: normal;-->
+<!--                    border-radius: 5px;-->
+<!--                    width: 100%;-->
+<!--                    border: 1px solid #3ac162;-->
+<!--                    border-width: 1px 1px 3px;-->
+<!--                    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;-->
+<!--                    margin-bottom: 15px;-->
+<!--                    margin-top: 25px;-->
+<!--                }-->
+
+<!--                fieldset {-->
+<!--                    margin-bottom: 30px;-->
+<!--                    border: none;-->
+<!--                }-->
+
+<!--                legend {-->
+<!--                    font-size: 1.4em;-->
+<!--                    margin-bottom: 10px;-->
+<!--                }-->
+
+<!--                label {-->
+<!--                    display: block;-->
+<!--                    margin-bottom: 8px;-->
+<!--                }-->
+
+<!--                label.light {-->
+<!--                    font-weight: 300;-->
+<!--                    display: inline;-->
+<!--                }-->
+
+<!--                .number {-->
+<!--                    background-color: #5fcf80;-->
+<!--                    color: #fff;-->
+<!--                    height: 30px;-->
+<!--                    width: 30px;-->
+<!--                    display: inline-block;-->
+<!--                    font-size: 0.8em;-->
+<!--                    margin-right: 4px;-->
+<!--                    line-height: 30px;-->
+<!--                    text-align: center;-->
+<!--                    text-shadow: 0 1px 0 rgba(255,255,255,0.2);-->
+<!--                    border-radius: 100%;-->
+<!--                }-->
+
+<!--                @media screen and (min-width: 480px) {-->
+
+<!--                    form {-->
+<!--                    max-width: 480px;-->
+<!--                    }-->
+
+<!--                }-->
+<!--                .title_container-->
+<!--                {-->
+<!--                    text-align: center;-->
+<!--                }-->
+<!--                .hero-image {-->
+<!--                    background-image: url("media\images\p5.png");-->
+<!--                    background-color: #cccccc;-->
+<!--                    height: 100%;-->
+<!--                    background-position: center;-->
+<!--                    background-repeat: no-repeat;-->
+<!--                    background-size: cover;-->
+<!--                    position: relative;-->
+
+<!--                }-->
+<!--                .btn1 {-->
+<!--                    margin-top: 20px;-->
+<!--                    background: #ecf0f3;-->
+<!--                    height: 26px;-->
+<!--                    width: 80px;-->
+<!--                    border-radius: 20px;-->
+<!--                    padding-right: 2px;-->
+<!--                    right:136;-->
+<!--                    cursor: pointer;-->
+<!--                    font-weight: 900;-->
+<!--                    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;-->
+<!--                    transition: 0.5s;-->
+<!--                    text-align: center;-->
+<!--                    font-size: 24px;}-->
+
+
+<!--    </style>-->
+<!--</head>-->
+<!--</html>-->
+
+
+<!--<div class="hero-image">-->
+<!--    <a href="C:\Users\Dhruv\Desktop\tajamaja\img4.jpg"></a>-->
+
+<!--    <link rel="stylesheet" href="C:\Users\Dhruv\Desktop\tajamaja\register.css ">-->
+<!--    <div class="form_container">-->
+<!--        <div class="title_container">-->
+<!--            <h2>Responsive Registration Form</h2>-->
+<!--        </div>-->
+<!--        <form method="POST">-->
+<!--            {% csrf_token %}-->
+<!--            <div class="row clearfix">-->
+<!--                <div class="">-->
+<!--                    <form>-->
+<!--                         <div class="input_field"><span><i class="fa fa-lock"></i></span>-->
+<!--                            <input type="text" name="First name" placeholder="First name" required/>-->
+<!--                        </div>-->
+<!--                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-lock"></i></span>-->
+<!--                            <input type="text" name="username" placeholder="Mobile Number" required/>-->
+<!--                        </div>-->
+
+<!--&lt;!&ndash;                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="email" name="email" placeholder="Email" required/>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-lock"></i></span>-->
+<!--                            <input type="password" name="password1" placeholder="Password" required/>-->
+<!--                        </div>-->
+<!--                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-lock"></i></span>-->
+<!--                            <input type="password" name="password2" placeholder="Re-type Password" required/>-->
+<!--                        </div>-->
+
+
+<!--                        <div class="input_field select_option">-->
+
+<!--                            <div class="select_arrow"></div>-->
+<!--                        </div>-->
+
+<!--                        <input class="button" type="submit" value="Register"/>-->
+
+<!--                        <a href="{% url 'index' %}" button class="btn1" type="button">Home </a>-->
+
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% block contain %}
+
+
+<style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+    *{
+      margin: 0;
+      padding: 0;
+      outline: none;
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    body{
+        background-image: url(/static/image/bgimage.jpeg);
+        height: auto;
+        width: auto;
+        background-repeat: initial;
+        backdrop-filter: blur(10px);
+}
+
+
+    .cont{
+      position: relative;
+      width: 25%;
+      height: 400px;
+      padding: 10px 25px;
+      margin: 10vh auto;
+      background: #fff;
+      border-radius: 8px;
+    }
+
+    .form{ width: 100%; height: 100%; }
+
+    h1, h2, .user, .pass{
+      text-align: center;
+      display: block;
+    }
+
+    h1{
+      color: #606060;
+      font-weight: bold;
+      font-size: 40px;
+      margin: 30px auto;
+    }
+
+    .user, .pass, .login{
+      width: 100%;
+      height: 45px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: lighter;
+      margin-bottom: 30px;
+    }
+
+    .user, .pass{ background: #ecf0f1; }
+
+    .login{
+      color: #fff;
+      cursor: pointer;
+      margin-top: 20px;
+      background: #3598dc;
+      transition: background 0.4s ease;
+    }
+
+    .login:hover{ background: #3570dc; }
+
+    @media only screen and (min-width : 280px) {
+      .cont{ width: 90% }
+    }
+
+    @media only screen and (min-width : 480px) {
+      .cont{ width: 60% }
+    }
+
+    @media only screen and (min-width : 768px) {
+      .cont{ width: 40% }
+    }
+
+    @media only screen and (min-width : 992px) {
+      .cont{ width: 30% }
+    }
+
+    h2{ color: #fff; margin-top: 25px; }
+
+
+
+
+</style>
+
+    <div class="cont" >
+        <div class="form">
+            <form method="POST"> {% csrf_token %}
+
+
+                <h1>Registartion.</h1>
+                <input name="First name" type="text" class="user" placeholder="First name"/>
+                <input name="username" type="text" class="user" placeholder="Mobile Number"/>
+                <input name="password1" type="password" class="user" placeholder="Password"/>
+                <input name="password2" type="password" class="user" placeholder="Re-type Password"/>
+                <!--                <input name="password" type="password" class="pass" placeholder="Password"/>-->
+                <button class="btn btn-dark mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
+                        style="margin-top: 0px;color:white; margin-left: 100px;height: 44px;width: 157px;     box-shadow: none;" type="submit">Submit
+                </button>
+                <!--                <button class="button" type="submit" >Submit</button>-->
+            </form>
+        </div>
+
+
+    </div>
+
+    {% endblock %}

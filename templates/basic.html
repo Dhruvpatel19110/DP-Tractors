@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!--<head>-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link href="https://icons8.com/icon/7695/search">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>-->
+
+<!--<link href="https://aiv3portal.autoinspekt.com/report/assets/gallery/vendor/prettyphoto/css/prettyphoto.css" rel="stylesheet" type="text/css">-->
+<!--    <link rel="stylesheet" href="">-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />-->
+<!--    &lt;!&ndash;    <link rel="stylesheet" href="signup.html">&ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<!--<link href="https://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">-->
+<!--<link href="https://cdn.datatables.net/responsive/1.0.4/css/dataTables.responsive.css" rel="stylesheet">-->
+<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.css" rel="stylesheet">-->
+
+
+<title> {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-black bg-light"
+     style="padding: 0px;margin: 0px;margin-top: auto;background-color: lightgrey!important;font-size: 16px;position: fixed;top: 0px;width: 100%;z-index: 9999999;">
+    <div class="Nav_bar"><a href="/"> <img src="{% static 'image/logo1.png' %}" style="width: 92px;"></div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon" style="background-image: url(static/image/homebutton.png);"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link abc" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle abc " href="" id="navbarDropdown"
+                                             role="button" data-toggle="dropdown" aria-haspopup="true"
+                                             aria-expanded="false">
+                Show Tractor
+            </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item abc"
+                                                                               href="{% url 'calc:stoke' %}"> Cooming
+                    Soon Tractor</a> <a class="dropdown-item abc" href="{% url 'calc:oldtractor' %}">Old Tractor</a>
+            <li class="nav-item active"><a class="nav-link abc" href="{% url 'calc:gallery' %}"> Gallery <span
+                    class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link abc" href="">About</a></li>
+            <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:ourteam' %}">Team</a></li>
+            <li class="nav-item"><a class="nav-link abc"
+                                    href="https://www.google.com/maps/dir/23.0360807,72.5113371/Dyalji+Krupa+Tractors,+Undel+Road,+Undel,+Gujarat+388640/@22.6855139,72.4224716,10z/data=!3m1!4b1!4m16!1m6!3m5!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2sDyalji+Krupa+Tractors!8m2!3d22.3353336!4d72.6988369!4m8!1m1!4e1!1m5!1m1!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2m2!1d72.6988369!2d22.3353336">Location</a>
+            </li>
+        </ul>
+
+        <div class="Nav2">
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 9px;"> {% if user.is_authenticated %} <a
+                    type="button" class="" style="margin-top: 9px;margin-left: 1px;height: auto;width: auto;">
+                {{user.username}}</a> <a
+                    class="btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
+                    style="margin-top: 0px;margin-left: 1px;height: auto;width: auto;margin-left: 20px;     box-shadow: none;
+" href="{% url 'calc:logout' %}">Logout</a> {% else %} <a
+                    class="btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
+                    style="margin-top: 0px;margin-left: 1px;height: 44px;width: 157px;     box-shadow: none;
+" href="{% url 'calc:register' %}">User registration</a> <a
+                    class=" btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
+                    style="margin-top: 0px;margin-left: 14px;height: 43px;width: 127px;margin-right: 1px;border-right-width: 0px;box-shadow: none;"
+                    href="{% url 'calc:login' %}">Login</a> {% endif %}
+            </form>
+        </div>
+    </div>
+</nav>
+
+</div>
+<div class="message">
+    <ul class="messages">-->
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}  alert-dismissible fade show" role="alert" style="margin-top: 46px;
+">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+
+{% block contain %}
+{% endblock %}
+
+{% block banner_slider %} {% endblock %}
+
+<footer id="dk-footer" class=" logoheaer dk-footer mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="dk-footer-box-info rounded-lg">
+                    <a href="" class="footer-logo"> <img src="{% static 'image/logo1.png' %}" alt="footer_logo"
+                                                         class="img-fluid"> </a>
+                    <p class="footer-info-text"></p>
+                    <div class="footer-social-link">
+                        <h3 style="color:black;"> Follow us</h3>
+                        <ul>
+                            <li>
+                                <a href=""> <i class="fa fa-facebook"></i> </a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-twitter"></i> </a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-google-plus"></i> </a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-instagram"></i> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Social link -->
+                </div>
+                <!-- End Footer info -->
+                <div class="footer-awarad">
+                    <!--                    <img src="{% static 'image/logo.png' %}"  alt="">-->
+                    <p>Best Design Company 2019</p>
+                </div>
+            </div>
+            <!-- End Col -->
+            <div class="col-md-12 col-lg-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-us">
+                            <div class="contact-icon"><i class="fa fa-map-o" aria-hidden="true"></i></div>
+                            <!-- End contact Icon -->
+                            <div class="contact-info">
+                                <h3> Undel Khambhat</h3>
+                                <p>Jalundh,Road</p>
+                            </div>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- End Contact Us -->
+                    </div>
+                    <!-- End Col -->
+                    <div class="col-md-6">
+                        <div class="contact-us contact-us-last">
+                            <div class="contact-icon"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                            </div>
+                            <!-- End contact Icon -->
+                            <div class="contact-info">
+                                <h3>75678 13182</h3>
+                                <p>Give us a call</p>
+                            </div>
+                            <!-- End Contact Info -->
+                        </div>
+                        <!-- End Contact Us -->
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Contact Row -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="footer-widget footer-left-widget">
+                            <div class="section-heading">
+                                <h3>Useful Links</h3> <span class="animate-border border-black"></span></div>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="{% url 'calc:ourteam'%}">Our Team</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="{% url 'calc:contactus'%}">Contact us</a></li>
+                                <li><a href="#">Faq</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Footer Widget -->
+                    </div>
+                    <!-- End col -->
+                    <div class="col-md-12 col-lg-6">
+                        <div class="footer-widget">
+                            <form action="#">
+
+                            </form>
+                            <!-- End form -->
+                        </div>
+                        <!-- End footer widget -->
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Widget Row -->
+    </div>
+    <!-- End Contact Container -->
+    <div class="copyright" style="position: fixed;bottom: 0px;width: 100%;z-index: 9999999;">
+        <div class="container">
+            <header class="container">
+                <div class="time">
+                    <p id="time"></p>
+
+                    <p id="daily-wish"></p>
+                </div>
+            </header>
+        </div>
+        <!-- End Copyright Container -->
+    </div>
+</footer>
+<div id="hello"></div>
+
+<!--Script Start-->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+<script src="https://cdn.datatables.net/responsive/1.0.4/js/dataTables.responsive.js"></script>
+<script>
+    $(window).scroll(function () {
+        var sticky = $('.sticky'),
+            scroll = $(window).scrollTop();
+        if (scroll >= 100) sticky.addClass('fixed');
+        else sticky.removeClass('fixed');
+    });
+
+    // SplideJS Slider. See full docs at:
+    // https://splidejs.com/
+    document.addEventListener('DOMContentLoaded', function () {
+        var splide = new Splide('#splide', {
+            type: 'loop',
+            perPage: 1,
+            autoplay: true,
+            interval: 15000, // How long to display each slide
+            pauseOnHover: false, // must be false
+            pauseOnFocus: false, // must be false
+            resetProgress: false
+        }).mount();
+
+        var button = document.querySelector('.splide__play-pause');
+
+        if (button) {
+            var pausedClass = 'is-paused';
+
+            // Remove the paused class and change the label to "Pause".
+            splide.on('autoplay:play', function () {
+                button.classList.remove(pausedClass);
+                button.textContent = 'Pause';
+                button.setAttribute('aria-label', 'Pause Autoplay');
+            });
+
+            // Add the paused class and change the label to "Play".
+            splide.on('autoplay:pause', function () {
+                button.classList.add(pausedClass);
+                button.textContent = 'Play';
+                button.setAttribute('aria-label', 'Start Autoplay');
+            });
+
+            // Toggle play/pause when the button is clicked.
+            splide.on('click', function () {
+                var flag = 99;
+                var Autoplay = splide.Components.Autoplay;
+
+                if (button.classList.contains(pausedClass)) {
+                    Autoplay.play(flag);
+                } else {
+                    Autoplay.pause(flag);
+                }
+            }, button);
+        }
+    });
+
+</script>
+</body>
+
+</html>

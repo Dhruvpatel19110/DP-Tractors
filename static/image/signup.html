@@ -1,0 +1,491 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="stylesheet" href="index.html">-->
+<!--    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <style>-->
+<!--        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");-->
+
+<!--* {-->
+<!--  margin: 0;-->
+<!--  padding: 0;-->
+<!--  box-sizing: border-box;-->
+<!--  font-family: "Poppins", "sans-serif";-->
+<!--}-->
+
+<!--body {-->
+<!--  height: 100vh;-->
+<!--  display: flex;-->
+<!--  align-items: center;-->
+<!--  justify-content: center;-->
+<!--  background-color: rgb(11, 14, 17);-->
+<!--}-->
+
+<!--.container {-->
+<!--  position: relative;-->
+<!--  max-width: 430px;-->
+<!--  width: 100%;-->
+<!--  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);-->
+<!--  overflow: hidden;-->
+<!--}-->
+
+<!--.container .forms {-->
+<!--  width: 200%;-->
+<!--  display: flex;-->
+<!--  height: 440px;-->
+<!--  align-items: center;-->
+<!--  transition: height 0.4s ease;-->
+<!--}-->
+
+<!--.container .form {-->
+<!--  width: 50%;-->
+<!--  padding: 30px;-->
+<!--  border-radius: 12px;-->
+<!--  background: #fff;-->
+<!--  transition: margin-left 0.36s ease;-->
+<!--}-->
+
+<!--.container.active .login {-->
+<!--  margin-left: -50%;-->
+<!--  opacity: 0;-->
+<!--  transition: margin-left 0.36s ease, opacity 0.3s ease;-->
+<!--}-->
+
+<!--.container .signup {-->
+<!--  opacity: 0;-->
+<!--  transition: opacity 0.18s ease;-->
+<!--}-->
+
+<!--.container.active .signup {-->
+<!--  opacity: 1;-->
+<!--  transition: opacity 0.4s ease;-->
+<!--}-->
+
+<!--.container.active .forms {-->
+<!--  height: 600px;-->
+<!--}-->
+
+<!--.container .form .title {-->
+<!--  position: relative;-->
+<!--  font-size: 27px;-->
+<!--  font-weight: 600;-->
+<!--}-->
+
+<!--.form .title::before {-->
+<!--  content: "";-->
+<!--  position: absolute;-->
+<!--  left: 0;-->
+<!--  bottom: 0;-->
+<!--  height: 3px;-->
+<!--  width: 30px;-->
+<!--  background-color: #4070f4;-->
+<!--  border-radius: 25px;-->
+<!--}-->
+
+<!--.form .input-field {-->
+<!--  position: relative;-->
+<!--  height: 50px;-->
+<!--  width: 100%;-->
+<!--  margin-top: 30px;-->
+<!--}-->
+
+<!--.input-field input {-->
+<!--  position: absolute;-->
+<!--  height: 100%;-->
+<!--  width: 100%;-->
+<!--  padding: 0 35px;-->
+<!--  border: none;-->
+<!--  outline: none;-->
+<!--  font-size: 16px;-->
+<!--  border-bottom: 2px solid #ccc;-->
+<!--  border-top: 2px solid transparent;-->
+<!--  transition: border-bottom-color 0.4s ease;-->
+<!--}-->
+
+<!--.input-field input:is(:focus, :valid) {-->
+<!--  border-bottom-color: #4070f4;-->
+<!--}-->
+
+<!--.input-field i {-->
+<!--  position: absolute;-->
+<!--  top: 50%;-->
+<!--  transform: translateY(-50%);-->
+<!--  color: #999;-->
+<!--  font-size: 23px;-->
+<!--  transition: color 0.4s ease;-->
+<!--}-->
+
+<!--.input-field input:is(:focus, :valid) ~ i {-->
+<!--  color: #4070f4;-->
+<!--}-->
+
+<!--.input-field i.icon {-->
+<!--  left: 0;-->
+<!--}-->
+
+<!--.input-field i.showHidePw {-->
+<!--  right: 0;-->
+<!--  cursor: pointer;-->
+<!--  padding: 10px;-->
+<!--}-->
+
+<!--.form .checkbox-text {-->
+<!--  display: flex;-->
+<!--  justify-content: space-between;-->
+<!--  margin-top: 20px;-->
+<!--}-->
+
+<!--.checkbox-text .checkbox-content {-->
+<!--  display: flex;-->
+<!--  align-items: center;-->
+<!--}-->
+
+<!--.checkbox-content input {-->
+<!--  margin: 0 8px -2px 4px;-->
+<!--  color: #4070f4;-->
+<!--}-->
+
+<!--.form .text {-->
+<!--  color: #333;-->
+<!--  font-size: 14px;-->
+<!--}-->
+
+<!--.form a.text {-->
+<!--  color: #4070f4;-->
+<!--  text-decoration: none;-->
+<!--}-->
+
+<!--.form a {-->
+<!--  text-decoration: none;-->
+<!--}-->
+
+<!--.form a:hover {-->
+<!--  text-decoration: underline;-->
+<!--}-->
+
+<!--.form .button {-->
+<!--  margin-top: 35px;-->
+<!--}-->
+
+<!--.form .button input {-->
+<!--  border: none;-->
+<!--  color: #000;-->
+<!--  font-size: 17px;-->
+<!--  font-weight: 500;-->
+<!--  letter-spacing: 1px;-->
+<!--  border-radius: 6px;-->
+<!--  background-color: rgb(252, 213, 53);-->
+<!--  cursor: pointer;-->
+<!--  transition: all 0.6s ease;-->
+<!--}-->
+
+<!--.button input:hover {-->
+<!--  background-color: rgb(227, 193, 49);-->
+<!--}-->
+
+<!--.form .login-signup {-->
+<!--  margin-top: 30px;-->
+<!--  text-align: center;-->
+<!--}-->
+<!--        -->
+<!--    </style>-->
+<!--     <div class="container">-->
+<!--        <div class="forms">-->
+<!--            <div class="form login">-->
+<!--                <span class="title">Login</span>-->
+
+<!--                <form action="#">-->
+<!--                    <div class="input-field">-->
+<!--                        <input type="text" placeholder="Enter your email" required>-->
+<!--                        <i class="uil uil-envelope"></i>-->
+<!--                    </div>-->
+
+<!--                    <div class="input-field">-->
+<!--                        <input type="password" class="password" placeholder="Enter your password" required>-->
+<!--                        <i class="uil uil-lock icon"></i>-->
+<!--                        <i class="uil uil-eye-slash showHidePw"></i>-->
+<!--                    </div>-->
+
+<!--                    <div class="checkbox-text">-->
+<!--                        <div class="checkbox-content">-->
+<!--                            <input type="checkbox" id="logCheck">-->
+<!--                            <label for="logCheck" class="text">Remember me</label>-->
+<!--                        </div>-->
+
+<!--                        <a href="#" class="text">Forgot password?</a>-->
+<!--                    </div>-->
+
+<!--                    <div class="input-field button">-->
+<!--                        <input type="button" value="Login Now">-->
+<!--                    </div>-->
+<!--                </form>-->
+
+<!--                <div class="login-signup">-->
+<!--                    <span class="text">Not a member?-->
+<!--                        <a href="#" class="text signup-link">Signup now</a>-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--            <div class="form signup">-->
+<!--                <span class="title">Registration</span>-->
+
+<!--                <form action="#">-->
+<!--                    <div class="input-field">-->
+<!--                        <input type="text" placeholder="Enter your name" required>-->
+<!--                        <i class="uil uil-user"></i>-->
+<!--                    </div>-->
+<!--                    <div class="input-field">-->
+<!--                        <input type="text" placeholder="Enter your email" required>-->
+<!--                        <i class="uil uil-envelope"></i>-->
+<!--                    </div>-->
+
+<!--                    <div class="input-field">-->
+<!--                        <input type="password" placeholder="Create a password" required>-->
+<!--                        <i class="uil uil-lock icon"></i>-->
+<!--                    </div>-->
+<!--                    <div class="input-field">-->
+<!--                        <input type="password" class="password" placeholder="Confirm a password" required>-->
+<!--                        <i class="uil uil-lock icon"></i>-->
+<!--                        <i class="uil uil-eye-slash showHidePw"></i>-->
+<!--                    </div>-->
+
+<!--                    <div class="checkbox-text">-->
+<!--                        <div class="checkbox-content">-->
+<!--                            <input type="checkbox" id="signCheck">-->
+<!--                            <label for="signCheck" class="text">I accept all terms & conditions</label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="input-field button">-->
+<!--                        <input type="button" value="Register Now">-->
+<!--                    </div>-->
+<!--                </form>-->
+
+<!--                <div class="login-signup">-->
+<!--                    <span class="text">Already have an account?-->
+<!--                        <a href="#" class="text login-link">Login now</a>-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <script>-->
+<!--    const container = document.querySelector(".container"), -->
+<!--            pwShowHide = document.querySelectorAll(".showHidePw"),-->
+<!--            pwFields = document.querySelectorAll(".password"),-->
+<!--            signup = document.querySelector(".signup-link"),-->
+<!--            login = document.querySelector(".login-link");-->
+
+<!--            pwShowHide.forEach(eyeIcon => {-->
+<!--                eyeIcon.addEventListener("click", () => {-->
+<!--                    pwFields.forEach(pwField => {-->
+<!--                        if(pwField.type === "password") {-->
+<!--                            pwField.type = "text";-->
+
+<!--                            pwShowHide.forEach(icon => {-->
+<!--                            icon.classList.replace("uil-eye-slash", "uil-eye");-->
+<!--                            })-->
+<!--                        }else {-->
+<!--                            pwField.type = "password";-->
+
+<!--                            pwShowHide.forEach(icon => {-->
+<!--                                icon.classList.replace("uil-eye", "uil-eye-slash");-->
+<!--                            })-->
+<!--                        }-->
+<!--                    })-->
+<!--                })-->
+<!--            })-->
+
+<!--            signup.addEventListener("click", () => {-->
+<!--                container.classList.add("active");-->
+<!--            })-->
+
+<!--            login.addEventListener("click", () => {-->
+<!--            container.classList.remove("active");-->
+<!--  })-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->\
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+
+
+
+    <script defer src="C:\Users\Dhruv\Downloads\login-page.js"></script>
+
+<style>
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("img1.jpg");
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+
+}
+
+.container {
+  position: relative;
+  width: 350px;
+  height: 555px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 7px 7px 10px yellow, -7px -7px 10px green ,  7px 7px 10px red;
+}
+
+.brand-logo {
+  height: 100px;
+  width: 100px;
+  background: url("https://img.icons8.com/color/100/000000/twitter--v2.png");
+  margin: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+     box-shadow: 7px 7px 10px green, -7px -7px 10px yellow;
+
+}
+
+.brand-title {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #1DA1F2;
+  letter-spacing: 1px;
+}
+
+.inputs {
+  text-align: left;
+  margin-top: 30px;
+}
+
+label, input, button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+input {
+  background: #ecf0f3;
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+button {
+  margin-top: 20px;
+  background: #1DA1F2;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+.btn1 {
+    margin-top: 20px;
+    background: #ecf0f3;
+    height: 26px;
+    width: 80px;
+    border-radius: 20px;
+     padding-right: 2px;
+     right:136;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 24px;}
+
+button:hover {
+  box-shadow: none;
+}
+
+a {
+  position: absolute;
+  font-size: 8px;
+  bottom: 4px;
+  right: 4px;
+  text-decoration: none;
+  color: black;
+  background: yellow;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+img
+{
+ background-image: url("idimg4.webp");
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+    </style>
+    </head>
+<div class="img">
+
+<div class="container">
+  <div class="brand-logo"></div>
+  <div class="brand-title">TRACTORS LOGIN</div>
+  <div class="inputs">
+    <label>USER NAME</label>
+    <input type="email" placeholder="example@test.com" />
+    <label>PASSWORD</label>
+    <input type="password" placeholder="Min 6 charaters long" />
+    <button type="submit"  >LOGIN</button>
+      <a  href= "{% url 'index' %}"  button class="btn1" type="button">Home </a>
+
+
+ </a>
+  </div>
+
+
+</div>
+</div>
+</html>
