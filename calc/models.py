@@ -38,6 +38,7 @@ class Index(models.Model):
 
 
 class OldTractor(models.Model):
+    objects = None
     is_sold_out = models.BooleanField(default=False)
     upload = models.ImageField(upload_to='images', blank=True, null=True)
     name = models.CharField(max_length=50, blank=True, null=True)

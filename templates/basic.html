@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 <link href="https://icons8.com/icon/7695/search">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>-->
 
 <!--<link href="https://aiv3portal.autoinspekt.com/report/assets/gallery/vendor/prettyphoto/css/prettyphoto.css" rel="stylesheet" type="text/css">-->
@@ -28,12 +30,12 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-black bg-light"
-     style="padding: 0px;margin: 0px;margin-top: auto;background-color: lightgrey!important;font-size: 16px;position: fixed;top: 0px;width: 100%;z-index: 9999999;">
+     style="padding: 0px;margin: 0px;margin-top: auto;background-color: lightgrey!important;font-size: 16px;position: fixed;top: 0px;width: 100%;z-index: 9999999;    padding-left: 10px;">
     <div class="Nav_bar"><a href="/"> <img src="{% static 'image/logo1.png' %}" style="width: 92px;"></div>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-            class="navbar-toggler-icon" style="background-image: url(static/image/homebutton.png);"></span></button>
+            class="navbar-toggler-icon"><img src="{% static 'image/homebutton.png' %}" alt="Home"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link abc" href="/">Home <span class="sr-only">(current)</span></a>
@@ -95,111 +97,114 @@
 {% endblock %}
 
 {% block banner_slider %} {% endblock %}
-
-<footer id="dk-footer" class=" logoheaer dk-footer mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-lg-4">
-                <div class="dk-footer-box-info rounded-lg">
-                    <a href="" class="footer-logo"> <img src="{% static 'image/logo1.png' %}" alt="footer_logo"
-                                                         class="img-fluid"> </a>
-                    <p class="footer-info-text"></p>
-                    <div class="footer-social-link">
-                        <h3 style="color:black;"> Follow us</h3>
-                        <ul>
-                            <li>
-                                <a href=""> <i class="fa fa-facebook"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-twitter"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-google-plus"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-instagram"></i> </a>
-                            </li>
-                        </ul>
+<!--  Strat Fotter-->
+<footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>Dayalji Krupa Tractors, Jalundh Road, Undel</span>
+                            </div>
+                        </div>
                     </div>
-                    <!-- End Social link -->
-                </div>
-                <!-- End Footer info -->
-                <div class="footer-awarad">
-                    <!--                    <img src="{% static 'image/logo.png' %}"  alt="">-->
-                    <p>Best Design Company 2019</p>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>7567813182</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>dhruvpatel19110@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- End Col -->
-            <div class="col-md-12 col-lg-8">
+            <div class="footer-content pt-5 pb-5">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="contact-us">
-                            <div class="contact-icon"><i class="fa fa-map-o" aria-hidden="true"></i></div>
-                            <!-- End contact Icon -->
-                            <div class="contact-info">
-                                <h3> Undel Khambhat</h3>
-                                <p>Jalundh,Road</p>
-                            </div>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- End Contact Us -->
-                    </div>
-                    <!-- End Col -->
-                    <div class="col-md-6">
-                        <div class="contact-us contact-us-last">
-                            <div class="contact-icon"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-                            </div>
-                            <!-- End contact Icon -->
-                            <div class="contact-info">
-                                <h3>75678 13182</h3>
-                                <p>Give us a call</p>
-                            </div>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- End Contact Us -->
-                    </div>
-                    <!-- End Col -->
-                </div>
-                <!-- End Contact Row -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-6">
-                        <div class="footer-widget footer-left-widget">
-                            <div class="section-heading">
-                                <h3>Useful Links</h3> <span class="animate-border border-black"></span></div>
-                            <ul>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="{% url 'calc:ourteam'%}">Our Team</a></li>
-                            </ul>
-                            <ul>
-                                <li><a href="{% url 'calc:contactus'%}">Contact us</a></li>
-                                <li><a href="#">Faq</a></li>
-                            </ul>
-                        </div>
-                        <!-- End Footer Widget -->
-                    </div>
-                    <!-- End col -->
-                    <div class="col-md-12 col-lg-6">
+                    <div class="col-xl-4 col-lg-4 mb-50">
                         <div class="footer-widget">
-                            <form action="#">
-
-                            </form>
-                            <!-- End form -->
+                            <div class="footer-logo">
+                                <a href="/"><img src="{% static 'image/logo1.png' %}" style="width: 100px;"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>---------------</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
                         </div>
-                        <!-- End footer widget -->
                     </div>
-                    <!-- End Col -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">about</a></li>
+<!--                                <li><a href="#">services</a></li>-->
+<!--                                <li><a href="#">portfolio</a></li>-->
+<!--                                <li><a href="#">Contact</a></li>-->
+<!--                                <li><a href="#">About us</a></li>-->
+<!--                                <li><a href="#">Our Services</a></li>-->
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Contact us</a></li>
+<!--                                <li><a href="#">Latest News</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+<!--                        <div class="footer-widget">-->
+<!--                            <div class="footer-widget-heading">-->
+<!--                                <h3>Subscribe</h3>-->
+<!--                            </div>-->
+<!--                            <div class="footer-text mb-25">-->
+<!--                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>-->
+<!--                            </div>-->
+<!--                            <div class="subscribe-form">-->
+<!--                                <form action="#">-->
+<!--                                    <input type="text" placeholder="Email Address">-->
+<!--                                    <button><i class="fab fa-telegram-plane"></i></button>-->
+<!--                                </form>-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- End Row -->
             </div>
-            <!-- End Col -->
         </div>
-        <!-- End Widget Row -->
-    </div>
+<!--        <div class="copyright-area">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">-->
+<!--                        <div class="copyright-text">-->
+<!--                            <p>Copyright &copy; 2022, All Right Reserved <a href="/">Dhruv Patel</a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </footer>
+<!--End footer-->
+
     <!-- End Contact Container -->
-    <div class="copyright" style="position: fixed;bottom: 0px;width: 100%;z-index: 9999999;">
+  <div class="copyright" style="position: fixed;bottom: 0px;width: 100%;z-index: 9999999;background-color: black;">
         <div class="container">
             <header class="container">
                 <div class="time">

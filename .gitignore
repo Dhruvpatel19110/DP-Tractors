@@ -147,3 +147,4 @@ cython_debug/
 media
 local_history.patch
 *.pyc
+__pycache__/
