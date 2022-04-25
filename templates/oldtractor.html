@@ -58,12 +58,12 @@ body {
 						<!--
                            -------<li><span>-->{% if dest1.is_sold_out %}
 						<p style="color:red;text-align: center;font-size: 20px;padding-top: 10px;"> Better Luck Next Time !!!!! </p> {% else %}
-						<div style="text-align:left"> <a href="/calc/inspection8/" type="button" class="btn btn-primary" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;">AutoReport</a> {% endif %}
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;"> Images </button>
+						<div style="text-align:left"> <a href="{% url 'calc:inspection' dest1.id %}" type="button" class="btn btn-primary" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;">AutoReport</a> {% endif %}
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tractor_images_{{dest1.id}}" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;"> Images </button>
 						</div>
 <!--						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1" style="margin-left: 66px;margin-top: 6px;width: 99px;height: 40px;"> Add Bid </button>-->
 						<!-- Modal -->
-						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal fade" id="tractor_images_{{dest1.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-centered" role="document">
 								<div class="modal-content">
 									<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

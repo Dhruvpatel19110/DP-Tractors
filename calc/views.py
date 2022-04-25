@@ -56,6 +56,7 @@ def Sold(request):
 
 @login_required(login_url=reverse_lazy('calc:login'))
 def inspection(request, pk):
+
     data = OldTractor.objects.get(id=pk)
     return render(request, 'inspection.html', {"inspection": data})
 
