@@ -25,7 +25,7 @@ urlpatterns = [
     path("saveenquiry/", views.SaveCustomer, name='save-enquiry'),
     # path("savetractordata/", views.Add_Tractor, name='add-tractor'),
     path("gallery/", views.Gallery, name='gallery'),
-    path("profile/", views.Profile, name='profile'),
+    # path("profile/", views.Profile, name='profile'),
     path("addtractor/", views.Add_Tractor, name='addtractor'),
 
 ]

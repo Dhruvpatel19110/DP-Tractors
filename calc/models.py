@@ -76,7 +76,7 @@ class OldTractor(models.Model):
     Engine_Photo = models.ImageField(upload_to='images')
     Engine1_Photo = models.ImageField(upload_to='images')
     Video = models.FileField(upload_to='videos_uploaded')
-    Min_Prize =models.IntegerField(blank=True, null=True)
+    Min_Prize = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return str(self.name)

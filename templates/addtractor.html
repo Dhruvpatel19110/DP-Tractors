@@ -3,6 +3,9 @@
 {% block contain %}
 
 <style>
+form
+{
+  margin-left: 40px;}
     .container {
   padding: 2rem 0rem;
 }
@@ -10,48 +13,197 @@
 h4 {
   margin: 2rem 0rem 1rem 0rem;
 }
+.main
+{
+  margin-top:100px;
+      color: black;
+    text-align: center;
+    font-size: 29px;
+}
+  }
+
+
 </style>
 
-
+<div class="main">
+    <p> Add Tractor</p>
+</div>
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-      <form>
-        <div class="form-group">
-          <label for="email2">Email address</label>
-          <input type="email" class="form-control" id="email2" aria-describedby="emailHelp" placeholder="Enter email">
-        </div>
+    <div class="row">
+        <div class="col-8">
+            <form method="POST" enctype="multipart/form-data"action="{% url 'calc:save-enquiry' %}"> {% csrf_token %}
+                <div class="form-group">
+                    <label>UPLOAD IMAGE</label>
+                    <input type="file" class="form-control" name="upload"
+                           placeholder="Main Image">
+                </div>
+                <div class="form-group">
+                    <label for="name"> Tracor Name</label>
+                    <input type="text" class="form-control" name="name"
+                           placeholder="NAME">
+                </div>
+                <div class="form-group">
+                    <label>H.P</label>
+                    <input type="number" class="form-control" name="HP"
+                           placeholder="Hourse Power">
+                </div>
+                <div class="form-group">
+                    <label>Manufacturing year</label>
+                    <input type="number" class="form-control"
+                           name="Manufacturingyear"
+                           placeholder="Manufacturing year">
+                </div>
+                <div class="form-group">
+                    <label>Register Number</label>
+                    <input type="text" class="form-control" name="Regno"
+                           placeholder="Register Number">
+                </div>
+                <div class="form-group">
+                    <label>RC</label>
+                    <input type="text" class="form-control" name="RC"
+                           placeholder="R C Book">
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" class="form-control" name="price"
+                           placeholder="Price">
+                </div>
+                <div class="form-group">
+                    <label>Hours</label>
+                    <input type="number" class="form-control" name="Hours"
+                           placeholder="Hours">
+                </div>
 
-        <div class="form-group">
-          <label for="password2">Password</label>
-          <input type="password" class="form-control" id="password2" placeholder="Password">
-        </div>
+                <div class="form-group">
+                    <label>Register year</label>
+                    <input type="number" class="form-control" name="Registeryear"
+                           placeholder="Register year">
+                </div>
+                <div class="form-group">
+                    <label>Detail</label>
+                    <input type="text" class="form-control" name="Detail"
+                           placeholder="Detail">
+                </div>
+                <div class="form-group">
+                    <label>RTO Name</label>
+                    <input type="text" class="form-control" name="RTOName"
+                           placeholder="RTO Name">
+                </div>
+                <div class="form-group">
+                    <label>Owner Number</label>
+                    <input type="text" class="form-control" name="OwnerNumber"
+                           placeholder="Owner Number">
+                </div>
+                <div class="form-group">
+                    <label>Vehical Make</label>
+                    <input type="text" class="form-control" name="VehicalMake"
+                           placeholder="Vehical Make">
+                </div>
 
-        <div class="form-group">
-          <label for="description1">Description</label>
-          <textarea class="form-control" id="description1" rows="3" placeholder="Write your description here..."></textarea>
-        </div>
+                <div class="form-group">
+                    <label>Chassis Number</label>
+                    <input type="text" class="form-control" name="ChassisNo"
+                           placeholder="C.No">
+                </div>
+                <div class="form-group">
+                    <label>Engine Number</label>
+                    <input type="text" class="form-control" name="EngineNo"
+                           placeholder="Engine Number">
+                </div>
+                <div class="form-group">
+                    <label>RC Status</label>
+                    <input type="text" class="form-control" name="RCStatus"
+                           placeholder="Status">
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>A
+                    <input type="number" class="form-control" name="Capacity"
+                           placeholder="Capacity">
+                </div>
+                <div class="form-group">
+                    <label>Trolly hook</label>
+                    <input type="text" class="form-control" name="Trollyhook"
+                           placeholder="Trolly hook">
+                </div>
+                <div class="form-group">
+                    <label>Rightside Photo:
+                    </label>
+                    <input type="file" class="form-control" name="Rightside_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Leftside Photo:</label>
+                    <input type="file" class="form-control" name="Leftside_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Meter Photo:</label>
+                    <input type="file" class="form-control" name="Meter_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Back Photo:</label>
+                    <input type="file" class="form-control" name="Back_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Tyare1 Photo:</label>
+                    <input type="file" class="form-control" name="Tyare1_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Tyare Life1</label>
+                    <input type="number" class="form-control" name="TyareLife1"
+                           placeholder="Tyare Life1">
+                </div>
+                <div class="form-group">
+                    <label>Tyare2 Photo:</label>
+                    <input type="file" class="form-control" name="Tyare2_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Tyare Life2</label>
+                    <input type="number" class="form-control" name="TyareLife2"
+                           placeholder="Tyare Life2">
+                </div>
+                <div class="form-group">Tyare3 Photo</label>
+                    <input type="file" class="form-control" name="Tyare3_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Tyare Life3</label>
+                    <input type="number" class="form-control" name="TyareLife3"
+                           placeholder="TyareLife3">
+                </div>
+                <div class="form-group">
+                    <label>Tyare4 Photo</label>
+                    <input type="file" class="form-control" name="Tyare4_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Tyare Life4</label>
+                    <input type="number" class="form-control" name="TyareLife4"
+                           placeholder="Tyare Life4">
+                </div>
+                <div class="form-group">
+                    <label>Engine1 Photo:</label>
+                    <input type="file" class="form-control" name="Engine_Photo"
+                           placeholder="aaaaaaa">
+                </div>
+                <div class="form-group">
+                    <label>Video:</label>
+                    <input type="file" class="form-control" name="Video"
+                           placeholder="aaaaaaa">
+                </div>
 
-        <div class="form-group">
-          <label for="group2">You can also add a picture</label>
-          <div class="input-group" id="group2">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon2"><i class="far fa-file-image"></i></span>
-            </div>
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="file2" aria-describedby="addon2">
-              <label class="custom-file-label" for="file2">Choose file</label>
-            </div>
-          </div>
         </div>
-
-        <div class="custom-control custom-checkbox form-group">
-            <input type="checkbox" class="custom-control-input" id="checkTerms">
-            <label class="custom-control-label" for="checkTerms">I have read and understood the Terms & Conditions.</label>
-        </div>
-        <button type="submit" class="btn btn-info">Submit</button>
-      </form>
     </div>
-  </div>
+
+    <button type="submit" class="btn btn-info"
+            style="margin-left: 101px;margin-top: 21px;">Submit
+    </button>
+    </form>
+</div>
+</div>
 </div>
 {% endblock %}
