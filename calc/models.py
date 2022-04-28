@@ -38,9 +38,9 @@ class Index(models.Model):
 
 
 class OldTractor(models.Model):
-    objects = None
+    # objects = None
     is_sold_out = models.BooleanField(default=False)
-    upload = models.ImageField(upload_to='images', blank=True, null=True)
+    upload = models.ImageField(upload_to='images/')
     name = models.CharField(max_length=50, blank=True, null=True)
     HP = models.IntegerField(blank=True, null=True)
     Manufacturingyear = models.IntegerField(blank=True, null=True)
@@ -60,23 +60,23 @@ class OldTractor(models.Model):
     Capacity = models.IntegerField(blank=True, null=True)
     Trollyhook = models.CharField(max_length=10, blank=True, null=True)
     color1 = models.CharField(max_length=10, blank=True, null=True)
-    Rightside_Photo = models.ImageField(upload_to='images', blank=True, null=True)
-    Leftside_Photo = models.ImageField(upload_to='images', blank=True, null=True)
-    Meter_Photo = models.ImageField(upload_to='images', blank=True, null=True)
+    Rightside_Photo = models.ImageField(upload_to='images')
+    Leftside_Photo = models.ImageField(upload_to='images')
+    Meter_Photo = models.ImageField(upload_to='images')
     # Front_Photo = models.ImageField(upload_to='images', blank=True, null=True)
-    Back_Photo = models.ImageField(upload_to='images', blank=True, null=True)
-    Tyare1_Photo = models.ImageField(upload_to='images', blank=True, null=True)
+    Back_Photo = models.ImageField(upload_to='images')
+    Tyare1_Photo = models.ImageField(upload_to='images')
     TyareLife1 = models.IntegerField(blank=True, null=True)
-    Tyare2_Photo = models.ImageField(upload_to='images', blank=True, null=True)
+    Tyare2_Photo = models.ImageField(upload_to='images')
     TyareLife2 = models.IntegerField(blank=True, null=True)
-    Tyare3_Photo = models.ImageField(upload_to='images', blank=True, null=True)
+    Tyare3_Photo = models.ImageField(upload_to='images')
     TyareLife3 = models.IntegerField(blank=True, null=True)
-    Tyare4_Photo = models.ImageField(upload_to='images', blank=True, null=True)
+    Tyare4_Photo = models.ImageField(upload_to='images')
     TyareLife4 = models.IntegerField(blank=True, null=True)
-    Engine_Photo = models.ImageField(upload_to='images', blank=True, null=True)
-    Engine1_Photo = models.ImageField(upload_to='images', blank=True, null=True)
-    Video = models.FileField(upload_to='videos_uploaded', null=True, blank=True)
-    Min_Prize =models.IntegerField(max_length=6, blank=True, null=True)
+    Engine_Photo = models.ImageField(upload_to='images')
+    Engine1_Photo = models.ImageField(upload_to='images')
+    Video = models.FileField(upload_to='videos_uploaded')
+    Min_Prize =models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return str(self.name)
@@ -90,11 +90,6 @@ class Inspection(models.Model):
         return str(self.name1)
 
 
-class destination(models.Model):
-    name = models.CharField(max_length=100)
-    img = models.ImageField(upload_to='pics')
-    dest = models.TextField()
-    price = models.IntegerField
 
 
 class stokedata:
@@ -142,12 +137,12 @@ class Wishlist(models.Model):
 
 class ContactEnquiry(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
-    Phone_number = models.IntegerField(max_length=10, blank=True, null=True)
+    Phone_number = models.IntegerField(blank=True, null=True)
     Village_name = models.CharField(max_length=50, blank=True, null=True)
     Description = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
-        return str(self.Phone_number)
+        return str(self.name)
 
 
 class Gallery_image(models.Model):

@@ -21,6 +21,9 @@ def WishList(request):
 def Gallery(request):
     return render(request, 'gallery.html')
 
+def Profile(request):
+    return render(request, 'profile.html')
+
 
 def Happy_customer(request):
     return render(request, "Customer.html")
@@ -43,6 +46,8 @@ def SaveCustomer(request):
                             Village_name=village,
                             Description=description, )
         cd.save()
+        messages.success(request, "Form Submit successful.")
+        return redirect("index")
     return render(request, 'Contactus.html')
 
 
@@ -52,6 +57,59 @@ def Our_Team(request):
 
 def Sold(request):
     return render(request, 'Sold.html')
+
+
+def Add_Tractor(request):
+    if request.method == 'POST':
+        # import pdb; pdb.set_trace()
+
+        mimg = request.FILES['Mainimage']
+        Tname = request.POST['TAname']
+        HP = request.POST['HAP']
+        MF = request.POST['MAF']
+        RN = request.POST['RAN']
+        RC = request.POST['RAC']
+        EXPRI = request.POST['EAXPRI']
+        Hour = request.POST['HAour']
+        RY = request.POST['RAY']
+        DET = request.POST['DAET']
+        RTON = request.POST['RATON']
+        ONA = request.POST['OANA']
+        VEM = request.POST['VAEM']
+        COL = request.POST['CAOL']
+        CN = request.POST['CAN']
+        EN = request.POST['EAN']
+        RCS = request.POST['RACS']
+        CAP = request.POST['CAAP']
+        TH = request.POST['TAH']
+        # import pdb; pdb.set_trace()
+        Rightside_Photo = request.POST['RAP']
+        LP = request.POST['LAP']
+        MP = request.POST['MAP']
+        BP = request.POST['BAP']
+        TP1 = request.POST['TAP1']
+        TL1 = request.POST['TAL1']
+        TY2 = request.POST['TAY2']
+        TL2 = request.POST['TAL2']
+        TY3 = request.POST['TAY3']
+        TL3 = request.POST['TAL3']
+        TL4 = request.POST['TAL4']
+        EP = request.POST['EAP']
+        EP1 = request.POST['EAP1']
+        Video = request.POST['VAideo']
+        MPri = request.POST['MAPri']
+
+        item = OldTractor(upload=mimg, name=Tname, HP=HP, Manufacturingyear=MF, Regno=RN, RC=RC, price=EXPRI,
+                          Hours=Hour, Registeryear=RY, Detail=DET, RTOName=RTON, OwnerNumber=ONA, VehicalMake=VEM,
+                          Color=COL, ChassisNo=CN, EngineNo=EN, RCStatus=RCS,
+                          Capacity=CAP, Trollyhook=TH, Rightside_Photo=RP, Leftside_Photo=LP, Meter_Photo=MP,
+                          Back_Photo=BP, Tyare1_Photo=TP1, TyareLife1=TL1, Tyare2_Photo=TY2, TyareLife2=TL2,
+                          Tyare3_Photo=TY3, TyareLife3=TL3, Tyare4_Photo=TL4,
+                          TyareLife4=TL4, Engine_Photo=EP, Engine1_Photo=EP1, Video=Video, Min_Prize=MPri)
+        item.save()
+        return redirect("index")
+    else:
+        return render(request, 'addtractor.html')
 
 
 @login_required(login_url=reverse_lazy('calc:login'))
@@ -128,8 +186,8 @@ def logout_user(request):
 
 
 def biditem(request):
-    import pdb;
-    pdb.set_trace()
+    # import pdb;
+    # pdb.set_trace()
     id = request.GET['id']
     item = OldTractor.objects.get(id=id)
     lstatus = "live"
@@ -138,7 +196,6 @@ def biditem(request):
         return render(request, "biditem.html", {'item': item})
     else:
         return redirect("home")
-
 
 # def validate(request):
 #     value = request.GET.get('bidrs')

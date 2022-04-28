@@ -460,6 +460,10 @@ ul {
     .text-align1 {
         text-align: center;
     }
+    .imagecustom {
+       height: auto;
+        width: auto;
+    }
 
     .row.mainindex {
         margin: 0px;
