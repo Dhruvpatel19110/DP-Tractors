@@ -53,6 +53,7 @@
                     class="sr-only">(current)</span></a></li>
             <li class="nav-item"><a class="nav-link abc" href="">About</a></li>
             <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:ourteam' %}">Team</a></li>
+            <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:addtractor' %}">Add tractor</a></li>
             <li class="nav-item"><a class="nav-link abc"
                                     href="https://www.google.com/maps/dir/23.0360807,72.5113371/Dyalji+Krupa+Tractors,+Undel+Road,+Undel,+Gujarat+388640/@22.6855139,72.4224716,10z/data=!3m1!4b1!4m16!1m6!3m5!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2sDyalji+Krupa+Tractors!8m2!3d22.3353336!4d72.6988369!4m8!1m1!4e1!1m5!1m1!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2m2!1d72.6988369!2d22.3353336">Location</a>
             </li>
@@ -163,7 +164,7 @@
 <!--                                <li><a href="#">About us</a></li>-->
 <!--                                <li><a href="#">Our Services</a></li>-->
                                 <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{% url 'calc:contactus' %}">Contact us</></li>
 <!--                                <li><a href="#">Latest News</a></li>-->
                             </ul>
                         </div>

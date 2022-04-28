@@ -5,10 +5,7 @@ from telusko import settings
 from . import views
 from django.urls import path
 
-app_name='calc'
-
-
-
+app_name = 'calc'
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -21,12 +18,14 @@ urlpatterns = [
     path("register", views.register_request, name="register"),
     path("login", views.login_request, name="login"),
     path("logout/", views.logout_user, name='logout'),
-    path("Wishlist/", views.WishList,name='WishList'),
+    path("Wishlist/", views.WishList, name='WishList'),
     path("Contactus/", views.Contact_us, name='contactus'),
     path("OurTeam/", views.Our_Team, name='ourteam'),
     path("Customer/", views.Happy_customer, name='customer'),
     path("saveenquiry/", views.SaveCustomer, name='save-enquiry'),
+    # path("savetractordata/", views.Add_Tractor, name='add-tractor'),
     path("gallery/", views.Gallery, name='gallery'),
-
+    path("profile/", views.Profile, name='profile'),
+    path("addtractor/", views.Add_Tractor, name='addtractor'),
 
 ]
