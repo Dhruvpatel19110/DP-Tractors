@@ -53,7 +53,11 @@
                     class="sr-only">(current)</span></a></li>
             <li class="nav-item"><a class="nav-link abc" href="">About</a></li>
             <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:ourteam' %}">Team</a></li>
+            {% if request.user.is_superuser %}
+
             <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:addtractor' %}">Add tractor</a></li>
+            {% endif %}
+
             <li class="nav-item"><a class="nav-link abc"
                                     href="https://www.google.com/maps/dir/23.0360807,72.5113371/Dyalji+Krupa+Tractors,+Undel+Road,+Undel,+Gujarat+388640/@22.6855139,72.4224716,10z/data=!3m1!4b1!4m16!1m6!3m5!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2sDyalji+Krupa+Tractors!8m2!3d22.3353336!4d72.6988369!4m8!1m1!4e1!1m5!1m1!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2m2!1d72.6988369!2d22.3353336">Location</a>
             </li>
@@ -71,7 +75,12 @@
 " href="{% url 'calc:register' %}">User registration</a> <a
                     class=" btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
                     style="margin-top: 0px;margin-left: 14px;height: 43px;width: 127px;margin-right: 1px;border-right-width: 0px;box-shadow: none;"
-                    href="{% url 'calc:login' %}">Login</a> {% endif %}
+                    href="{% url 'calc:login' %}">Login</a>
+                    <a
+                    class=" btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
+                    style="margin-top: 0px;margin-left: 14px;height: 43px;width: 127px;margin-right: 1px;border-right-width: 0px;box-shadow: none;"
+                    href="{% url 'calc:admin_login' %}">Admin Login</a>
+                     {% endif %}
             </form>
         </div>
     </div>

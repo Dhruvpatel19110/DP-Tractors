@@ -27,5 +27,9 @@ urlpatterns = [
     path("gallery/", views.Gallery, name='gallery'),
     # path("profile/", views.Profile, name='profile'),
     path("addtractor/", views.Add_Tractor, name='addtractor'),
+    path("admin_login/", views.admin_login, name='admin_login'),
+
 
 ]
+
+  
