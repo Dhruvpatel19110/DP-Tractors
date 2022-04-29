@@ -20,7 +20,7 @@ h4 {
     text-align: center;
     font-size: 29px;
 }
-  }
+  
 
 
 </style>
@@ -31,11 +31,13 @@ h4 {
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <form method="POST" enctype="multipart/form-data"action="{% url 'calc:save-enquiry' %}"> {% csrf_token %}
+            <form method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
                 <div class="form-group">
                     <label>UPLOAD IMAGE</label>
                     <input type="file" class="form-control" name="upload"
                            placeholder="Main Image">
+                            
                 </div>
                 <div class="form-group">
                     <label for="name"> Tracor Name</label>
@@ -187,7 +189,7 @@ h4 {
                 </div>
                 <div class="form-group">
                     <label>Engine1 Photo:</label>
-                    <input type="file" class="form-control" name="Engine_Photo"
+                    <input type="file" class="form-control" name="Engine1_Photo"
                            placeholder="aaaaaaa">
                 </div>
                 <div class="form-group">
@@ -197,7 +199,7 @@ h4 {
                 </div>
 
         </div>
-    </div>
+    </div>  
 
     <button type="submit" class="btn btn-info"
             style="margin-left: 101px;margin-top: 21px;">Submit

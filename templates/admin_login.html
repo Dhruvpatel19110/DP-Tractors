@@ -92,7 +92,7 @@
 
     h2{ color: #fff; margin-top: 25px; }
 
-  }
+    }
 
     </style>
 <div class="cont" style="margin-bottom: 150px;">
@@ -101,14 +101,14 @@
             <form method="POST"> {% csrf_token %}
 
 
-                <h1>Login</h1>
+                <h1>Admin Login</h1>
                 <input name="username" type="text" class="user" placeholder="Username"/>
                 <input name="password" type="password" class="pass" placeholder="Password"/>
                 <button type="submit" class="login">Login</button>
-                <p> Don't have an account? <a class="href_link_ediig" href="{% url 'calc:register' %}" >Create an Account</a></p>
+           
             </form>
         </div>
 
 
     </div>
-    {% endblock %}
+{% endblock %}
