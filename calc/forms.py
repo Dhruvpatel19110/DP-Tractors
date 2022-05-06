@@ -1,7 +1,7 @@
 from telnetlib import RCP
 from django import forms
 from calc import models
-from calc.models import OldTractor
+from calc.models import Gallery_image, OldTractor
 
 
 class OldTracktorForm(forms.ModelForm):
@@ -55,3 +55,13 @@ class OldTracktorForm(forms.ModelForm):
     # confirm_password = forms.CharField()
     # phone_number = forms.CharField(max_length=13)
     # zipcode = forms.CharField()
+
+class AddGalleryForm(forms.ModelForm):
+    upload1 = forms.ImageField(required = True)
+
+    
+    class Meta:
+        model = Gallery_image
+    
+        fields = '__all__'
+

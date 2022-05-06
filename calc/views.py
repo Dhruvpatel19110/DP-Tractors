@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 
-from calc.forms import OldTracktorForm
+from calc.forms import AddGalleryForm, OldTracktorForm
 
 from .models import Stoke, Index, OldTractor, NewUserForm, ContactEnquiry, \
     Gallery_image
@@ -64,11 +64,46 @@ def Our_Team(request):
 def Sold(request):
     return render(request, 'Sold.html')
 
+
 def Add_Tractor(request):
     return render(request, 'addtractor.html')
 
+
+def Add_Gallery(request):
+    return render(request, 'addgallery.html')
+    
+
+
+# def View_Tractor(request):
+#     return render(request, 'view_tractors.html')
+
+# def View_Tractor(request):
+#     import pdb; pdb.set_trace()
+
+#     dest1 = OldTractor.objects.all()
+#     return render(request, "view_tractors.html", {"dest1": dest1})
+
+# def delete_book(request, pk):
+#     dest1 = OldTractor.objects.filter(id=pk)
+#     dest1.delete()
+#     return redirect("/view_books")
+def update_tractor(request, pk):
+    pk = int(pk)
+    if request.method == "POST":
+        try:
+            Tractor_sel = OldTractor.objects.get(id=pk)
+        except OldTractor.DoesNotExist:
+            return redirect('index')
+        Tractor_form = OldTractor(request.POST or None, instance=Tractor_sel)
+        if Tractor_form.is_valid():
+            Tractor_form.save()
+            return redirect('index')
+    Tractor_form = OldTractor()
+    return render(request, 'oldtractor.html', {'upload_form': Tractor_form})
+
+
 # 
-@login_required(login_url = '/admin_login')
+@login_required(login_url='/admin_login')
 def Add_Tractor(request):
     # import pdb; pdb.set_trace()
 
@@ -78,16 +113,32 @@ def Add_Tractor(request):
         if Add_Tractor.is_valid():
             Add_Tractor.save()
             messages.success(request, "Add Tractor Success.")
-            
+
             return redirect('index')
         messages.error(request,
                        "Not Completed Form")
         return render(request, 'index.html')
-        
+
     else:
         return render(request, 'addtractor.html', {'form': Add_Tractor})
 
-        
+def Add_Gallery(request):
+    # import pdb; pdb.set_trace()
+
+    Add_Gallery = AddGalleryForm()
+    if request.method == 'POST':
+        Add_Gallery = AddGalleryForm(request.POST, request.FILES)
+        if Add_Gallery.is_valid():
+            Add_Gallery.save()
+            messages.success(request, "Add Image Success.")
+
+            return redirect('index')
+        messages.error(request,
+                       "Not Completed Form")
+        return render(request, 'index.html')
+
+    else:
+        return render(request, 'addgallery.html', {'form': Add_Gallery})
 
 
 @login_required(login_url=reverse_lazy('calc:login'))
@@ -156,6 +207,7 @@ def login_request(request):
 
     return render(request=request, template_name="login.html")
 
+
 def admin_login(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -163,19 +215,15 @@ def admin_login(request):
         user = authenticate(username=username, password=password)
 
         if user is not None:
-            login(request,user)
+            login(request, user)
             if request.user.is_superuser:
                 return redirect("addtractor")
             else:
                 return HttpResponse(" You are not an admin")
         else:
             alert = True
-            return render(request, "admin_login.html", {'alert':alert})
+            return render(request, "admin_login.html", {'alert': alert})
     return render(request, "admin_login.html")
-
-
-
-
 
 
 def logout_user(request):

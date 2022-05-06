@@ -51,12 +51,18 @@
                     Soon Tractor</a> <a class="dropdown-item abc" href="{% url 'calc:oldtractor' %}">Old Tractor</a>
             <li class="nav-item active"><a class="nav-link abc" href="{% url 'calc:gallery' %}"> Gallery <span
                     class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link abc" href="">About</a></li>
+            <!-- <li class="nav-item"><a class="nav-link abc" href="">About</a></li> -->
             <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:ourteam' %}">Team</a></li>
             {% if request.user.is_superuser %}
 
-            <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:addtractor' %}">Add tractor</a></li>
-            {% endif %}
+                <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:addtractor' %}">Add tractor</a></li>
+                <li class="nav-item"><a class="nav-link abc" href="{% url 'calc:addgallery' %}">Add Image</a></li>
+
+
+   
+
+
+            {% endif %} 
 
             <li class="nav-item"><a class="nav-link abc"
                                     href="https://www.google.com/maps/dir/23.0360807,72.5113371/Dyalji+Krupa+Tractors,+Undel+Road,+Undel,+Gujarat+388640/@22.6855139,72.4224716,10z/data=!3m1!4b1!4m16!1m6!3m5!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2sDyalji+Krupa+Tractors!8m2!3d22.3353336!4d72.6988369!4m8!1m1!4e1!1m5!1m1!1s0x395f07706ca39e73:0x9e40214cadcbaa59!2m2!1d72.6988369!2d22.3353336">Location</a>
@@ -64,7 +70,8 @@
         </ul>
 
         <div class="Nav2">
-            <form class="form-inline my-2 my-lg-0" style="margin-right: 9px;"> {% if user.is_authenticated %} <a
+            <form class="form-inline my-2 my-lg-0" style="margin-right: 9px;">
+                 {% if user.is_authenticated %} <a
                     type="button" class="" style="margin-top: 9px;margin-left: 1px;height: auto;width: auto;">
                 {{user.username}}</a> <a
                     class="btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
@@ -76,10 +83,7 @@
                     class=" btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
                     style="margin-top: 0px;margin-left: 14px;height: 43px;width: 127px;margin-right: 1px;border-right-width: 0px;box-shadow: none;"
                     href="{% url 'calc:login' %}">Login</a>
-                    <a
-                    class=" btn btn-primary mr-1 hover:text-gray-900 inline-flex items-center py-2 px-4  bg-gray-100 border-0 py-2 px-4 focus:outline-none hover:bg-green-200 rounded text-base  md:mt-0"
-                    style="margin-top: 0px;margin-left: 14px;height: 43px;width: 127px;margin-right: 1px;border-right-width: 0px;box-shadow: none;"
-                    href="{% url 'calc:admin_login' %}">Admin Login</a>
+                
                      {% endif %}
             </form>
         </div>
@@ -149,7 +153,7 @@
                                 <a href="/"><img src="{% static 'image/logo1.png' %}" style="width: 100px;"></a>
                             </div>
                             <div class="footer-text">
-                                <p> Patelk </p>
+
                             </div>
                             <div class="footer-social-icon">
                                 <span>Follow us</span>
@@ -166,13 +170,13 @@
                             </div>
                             <ul>
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
+                                <!-- <li><a href="#">about</a></li> -->
 <!--                                <li><a href="#">services</a></li>-->
 <!--                                <li><a href="#">portfolio</a></li>-->
 <!--                                <li><a href="#">Contact</a></li>-->
 <!--                                <li><a href="#">About us</a></li>-->
 <!--                                <li><a href="#">Our Services</a></li>-->
-                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="{% url 'calc:ourteam' %}">Expert Team</a></li>
                                 <li><a href="{% url 'calc:contactus' %}">Contact us</></li>
 <!--                                <li><a href="#">Latest News</a></li>-->
                             </ul>

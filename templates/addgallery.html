@@ -1,0 +1,49 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block contain %}
+
+<style>
+.form-group
+  {
+    margin-top: 159px;
+;
+
+  }
+
+form
+{
+  margin-left: 40px;}
+   
+
+
+h4 {
+  margin: 2rem 0rem 1rem 0rem;
+}
+.main
+{
+  margin-top:100px;
+      color: black;
+    text-align: center;
+    font-size: 29px;
+}
+  
+body{
+    margin-top: 100PX;
+}
+
+</style>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+           <div class="form-group">
+               <label>UPLOAD IMAGE</label>
+               <input type="file" class="form-control" name="upload1"
+                      placeholder="Main Image">
+                       
+           </div>
+           
+    <button type="submit" class="btn btn-info"
+    style="margin-left: 101px;margin-top: 21px;">Submit
+</button>
+</form>
+        
+{% endblock %}
