@@ -61,20 +61,21 @@ class OldTractor(models.Model):
     Trollyhook = models.CharField(max_length=10, blank=True, null=True)
     color1 = models.CharField(max_length=10, blank=True, null=True)
     Rightside_Photo = models.ImageField()
-    Leftside_Photo =  models.ImageField()
-    Meter_Photo =  models.ImageField()
+    Leftside_Photo = models.ImageField()
+    Meter_Photo = models.ImageField()
     # Front_Photo = models.ImageField(upload_to='images', blank=True, null=True)
-    Back_Photo =  models.ImageField()
-    Tyare1_Photo =  models.ImageField()
+    Back_Photo = models.ImageField()
+    Tyare1_Photo = models.ImageField()
     TyareLife1 = models.IntegerField(blank=True, null=True)
-    Tyare2_Photo =   models.ImageField()
+    Tyare2_Photo = models.ImageField()
     TyareLife2 = models.IntegerField(blank=True, null=True)
-    Tyare3_Photo =   models.ImageField()
+    Tyare3_Photo = models.ImageField()
     TyareLife3 = models.IntegerField(blank=True, null=True)
-    Tyare4_Photo =   models.ImageField()
+    Tyare4_Photo = models.ImageField()
     TyareLife4 = models.IntegerField(blank=True, null=True)
-    Engine1_Photo =   models.ImageField()
+    Engine1_Photo = models.ImageField()
     Video = models.FileField(upload_to='videos_uploaded')
+
     # Min_Prize = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
@@ -87,8 +88,6 @@ class Inspection(models.Model):
 
     def __str__(self):
         return str(self.name1)
-
-
 
 
 class stokedata:
@@ -145,7 +144,7 @@ class ContactEnquiry(models.Model):
 
 
 class Gallery_image(models.Model):
-    Image = models.ImageField(upload_to='images', blank=True, null=True)
+    upload1 = models.ImageField(upload_to='images', blank=True, null=True)
 
     def __str__(self):
-        return str(self.Image)
+        return str(self.upload1)

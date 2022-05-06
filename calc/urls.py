@@ -23,12 +23,10 @@ urlpatterns = [
     path("OurTeam/", views.Our_Team, name='ourteam'),
     path("Customer/", views.Happy_customer, name='customer'),
     path("saveenquiry/", views.SaveCustomer, name='save-enquiry'),
-    # path("savetractordata/", views.Add_Tractor, name='add-tractor'),
     path("gallery/", views.Gallery, name='gallery'),
-    # path("profile/", views.Profile, name='profile'),
     path("addtractor/", views.Add_Tractor, name='addtractor'),
-    path("admin_login/", views.admin_login, name='admin_login'),
-
+    path('update/<int:pk>', views.update_tractor, name="update_tractor"),
+    path("addgallery/", views.Add_Gallery, name='addgallery'),
 
 ]
 
