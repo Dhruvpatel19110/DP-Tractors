@@ -120,17 +120,6 @@ def save(self, commit=True):
     return user
 
 
-class Wishlist(models.Model):
-    upload = models.ImageField(upload_to='images', blank=True, null=True)
-    name = models.CharField(max_length=50, blank=True, null=True)
-    HP = models.IntegerField(blank=True, null=True)
-    Manufacturingyear = models.IntegerField(blank=True, null=True)
-    Regno = models.CharField(max_length=10, blank=True, null=True)
-    RC = models.CharField(max_length=3, blank=True, null=True)
-    Hours = models.IntegerField(blank=True, null=True)
-
-    def __str__(self):
-        return str(self.name)
 
 
 class ContactEnquiry(models.Model):
