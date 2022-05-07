@@ -10,17 +10,12 @@ from django.contrib import messages
 
 from calc.forms import AddGalleryForm, OldTracktorForm
 
-from .models import Stoke, Index, OldTractor, NewUserForm, ContactEnquiry, \
-    Gallery_image
+from .models import Stoke, Index, OldTractor, NewUserForm, ContactEnquiry,Gallery_image
 
 
 @login_required(login_url=reverse_lazy('calc:login'))
 def stoke(request):
     return render(request, 'stoke.html')
-
-
-def WishList(request):
-    return render(request, 'Wishlist.html')
 
 
 def Gallery(request):
@@ -71,35 +66,6 @@ def Add_Tractor(request):
 
 def Add_Gallery(request):
     return render(request, 'addgallery.html')
-    
-
-
-# def View_Tractor(request):
-#     return render(request, 'view_tractors.html')
-
-# def View_Tractor(request):
-#     import pdb; pdb.set_trace()
-
-#     dest1 = OldTractor.objects.all()
-#     return render(request, "view_tractors.html", {"dest1": dest1})
-
-# def delete_book(request, pk):
-#     dest1 = OldTractor.objects.filter(id=pk)
-#     dest1.delete()
-#     return redirect("/view_books")
-def update_tractor(request, pk):
-    pk = int(pk)
-    if request.method == "POST":
-        try:
-            Tractor_sel = OldTractor.objects.get(id=pk)
-        except OldTractor.DoesNotExist:
-            return redirect('index')
-        Tractor_form = OldTractor(request.POST or None, instance=Tractor_sel)
-        if Tractor_form.is_valid():
-            Tractor_form.save()
-            return redirect('index')
-    Tractor_form = OldTractor()
-    return render(request, 'oldtractor.html', {'upload_form': Tractor_form})
 
 
 # 
@@ -121,6 +87,7 @@ def Add_Tractor(request):
 
     else:
         return render(request, 'addtractor.html', {'form': Add_Tractor})
+
 
 def Add_Gallery(request):
     # import pdb; pdb.set_trace()
@@ -180,7 +147,7 @@ def register_request(request):
         form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # login(request, user)
+            
             messages.success(request, "Registration successful.")
             return redirect("index")
         messages.error(request,
@@ -196,7 +163,7 @@ def login_request(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
-        # request.session['user'] = user.username
+    
         if user is not None:
             login(request, user)
             messages.success(request,
@@ -208,64 +175,7 @@ def login_request(request):
     return render(request=request, template_name="login.html")
 
 
-def admin_login(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            if request.user.is_superuser:
-                return redirect("addtractor")
-            else:
-                return HttpResponse(" You are not an admin")
-        else:
-            alert = True
-            return render(request, "admin_login.html", {'alert': alert})
-    return render(request, "admin_login.html")
-
-
 def logout_user(request):
     logout(request)
     messages.success(request, f" Logout Successfully !!")
     return redirect('index')
-
-
-def biditem(request):
-    # import pdb;
-    # pdb.set_trace()
-    id = request.GET['id']
-    item = OldTractor.objects.get(id=id)
-    lstatus = "live"
-
-    if item.status == lstatus:
-        return render(request, "biditem.html", {'item': item})
-    else:
-        return redirect("home")
-
-# def validate(request):
-#     value = request.GET.get('bidrs')
-#
-#     iid = request.GET.get('iid')
-#     # print (iid)
-#         bidder = request.user
-#     bidderEmail = bidder.email
-#     # print (bidder.id)
-#     item_obj = OldTractor.objects.get(id=iid)
-#     itemownerEmail = item_obj.ownermail
-#
-#     if bidderEmail == itemownerEmail:
-#         return render(request, "notification.html")
-#     else:
-#         mail = item_obj.ownermail
-#         subject = "Online Bidding"
-#         msg = "Congratulations your item is bidded by " + bidder.email + "
-#         , By INR rs = " + value + ". Contact your buyer by email Thank You for
-#         using our app."
-#         to = mail
-#         # res     = send_mail(subject, msg, "bidmafia007@gmail.com", [to])
-#
-#         OldTractor.objects.filter(id=iid).update(currentPrice=value)
-#         OldTractor.objects.filter(id=iid).update(highest_bidder=bidder.id)
-#         return redirect("home")

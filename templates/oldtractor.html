@@ -80,13 +80,9 @@ p{
                             
                     
                         </div>
-            <!-- {% if request.user.is_superuser %}
-                        <a href="{% url 'calc:update_tractor' dest1.id %}" class="btn btn-warning" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;" id = '{{inspection.id}}'>edit</a>
-                        <!-- <a href="delete/{{dest1.id}}" class="btn btn-danger" style="margin-left: 9px;border-left-width: 0px;margin-top: 12px;width: 102px;height: 35px;padding-top: 2px;" id = '{{dest1.id}}'>delete</a> -->
-            <!-- {% endif %} --> 
+           
                        
-                        <!--						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1" style="margin-left: 66px;margin-top: 6px;width: 99px;height: 40px;"> Add Bid </button>-->
-                        <!-- Modal -->
+                        
                         <div class="modal fade" id="tractor_images_{{dest1.id}}" tabindex="-1" role="dialog"
                              aria-labelledby="exampleModalCenterTitle_{{dest1.id}}" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -108,9 +104,9 @@ p{
                                             <div class="carousel-item"><img class="d-block w-100"
                                                                             src="{{dest1.Back_Photo.url}}"
                                                                             alt="Fifth slide"></div>
-                                            <div class="carousel-item"><img class="d-block w-100"
+                                            <!-- <div class="carousel-item"><img class="d-block w-100"
                                                                             src="{{dest1.Tyare1_Photo}}"
-                                                                            alt="Sixth slide"></div>
+                                                                            alt="Sixth slide"></div> -->
                                             <div class="carousel-item"><img class="d-block w-100"
                                                                             src="{{dest1.Tyare2_Photo.url}}"
                                                                             alt="Sevent slide"></div>
@@ -120,12 +116,12 @@ p{
                                             <div class="carousel-item"><img class="d-block w-100"
                                                                             src="{{dest1.Tyare4_Photo.url}}"
                                                                             alt="Nine  slide"></div>
-                                            <div class="carousel-item"><img class="d-block w-100"
+                                            <!-- <div class="carousel-item"><img class="d-block w-100"
                                                                             src="{{dest1.TyareLife4.url}}"
-                                                                            alt="Ten slide"></div>
-                                            <div class="carousel-item"><img class="d-block w-100"
+                                                                            alt="Ten slide"></div> -->
+                                            <!-- <div class="carousel-item"><img class="d-block w-100"
                                                                             src="{{dest1.Engine_Photo.url}}"
-                                                                            alt="Ten slide"></div>
+                                                                            alt="Ten slide"></div> -->
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleControls_{{dest1.id}}" role="button" data-slide="prev">
                                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

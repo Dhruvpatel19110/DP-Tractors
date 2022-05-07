@@ -1,12 +1,15 @@
 {% extends 'basic.html' %}
 {% load static %}
 {% block contain %}
+<style>
+
+</style>
 <p> Happy Custumer</p>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     {% for dest1 in gallery %}
 
-    <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}" >
+    <div class="carousel-item imageslider1 {% if forloop.counter0 == 0 %} active {% endif %}" >
       <img  width="auto" height="auto" class="d-block  indeximage1" src="{{dest1.upload1.url}}" >
     </div>
 
