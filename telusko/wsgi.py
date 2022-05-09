@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
 
 import os
 import django
-from whitenoise.django import Djangowhitenoise
+from whitenoisedjango import Djangowhitenoise
 
 from django.core.wsgi import get_wsgi_application
 
