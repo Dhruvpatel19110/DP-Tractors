@@ -46,7 +46,7 @@
 							<br class="none-480">
 							<div class="clearfix"></div>
 							<div class="thumbnail main_thumbnail main_thumbnail-pdf">
-								<a href="{{inspection.upload.url}}" data-rel="prettyPhoto[gallery]"> <img src="{{inspection.upload.url}}" class="img-responsive" alt="Autoinspekt" /> </a>
+								<a href="{{inspection.upload.url}}" > <img src="{{inspection.upload.url}}" class="img-responsive" alt="Autoinspekt" /> </a>
 								<div class="clearfix"></div>
 							</div>
 							<div class="col-xs-12 Ex_show_Room_price"><span>Ex-Showroom Price : <i class="fa fa-rupee"></i> {{inspection.price}}</span> </div>
@@ -387,12 +387,12 @@
 													<li data-thumb="{{inspection.Rightside_Photo.url}}"><img class="img-responsive" src="{{inspection.Rightside_Photo.url}}" alt="Autoinspekt" /></li>
 													<li data-thumb="{{inspection.Leftside_Photo.url}}"><img class="img-responsive" src="{{inspection.Leftside_Photo.url}}" alt="Autoinspekt" /></li>
 													<li data-thumb="{{inspection.Meter_Photo.url}}"><img class="img-responsive" src="{{inspection.Meter_Photo.url}}" alt="Autoinspekt" /></li>
-													<!--
-                                            <li data-thumb="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre5.jpg"> <img class="img-responsive" src="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre5.jpg" /> </li>
-                                            <li data-thumb="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre6.jpg"> <img class="img-responsive" src="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre6.jpg" /> </li>
-                                            <li data-thumb="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre7.jpg"> <img class="img-responsive" src="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre7.jpg" /> </li>
-                                            <li data-thumb="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre8.jpg"> <img class="img-responsive" src="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre8.jpg" /> </li>
-                                            -->
+													
+                                            <li data-thumb="{{inspection.Rightside_Photo.url}}"> <img class="img-responsive" src="{{inspection.Rightside_Photo.url}}" /> </li>
+                                            <li data-thumb="{{inspection.Rightside_Photo.url}}"> <img class="img-responsive" src="{{inspection.Rightside_Photo.url}}" /> </li>
+                                            <li data-thumb="{{inspection.Rightside_Photo.url}}"> <img class="img-responsive" src="{{inspection.Rightside_Photo.url}}"/> </li>
+                                            <li data-thumb="{{inspection.Rightside_Photo.url}}"> <img class="img-responsive" src="{{inspection.Rightside_Photo.url}}" /> </li>
+                                           
 												</ul>
 											</div>
 										</div>
@@ -787,13 +787,13 @@ at the time of inspection / valuation. </li>
 	<div class="pull-right hidden-sm hidden-xs"><img class="ai_logo_size" alt="Autoinspekt" src="" /> </div>
 	</div>
 	<pdf>
-		<!-- <div style="display:none">
+		<div style="display:none">
         <a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/front_img.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/right_side.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/rear_img.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/left_side.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/interior1.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/interior3.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/chassis_num.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/chassis_imprint.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre1.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre2.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre3.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre4.jpg" data-rel="prettyPhoto[gallery]"></a><a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/selfie.jpg" data-rel="prettyPhoto[gallery]"></a>
     <a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre5.jpg" data-rel="prettyPhoto[gallery]"></a>
         <a href="https://chnimgs3bkt.s3.ap-south-1.amazonaws.com/autoinspekt/2022/Feb/15/293340383/original/tyre6.jpg" data-rel="prettyPhoto[gallery]"></a>
       </div> -->
 </body>
-<!-- <script src="https://aiv3portal.autoinspekt.com/report/assets/js/jquery.min.js"></script>
+<script src="https://aiv3portal.autoinspekt.com/report/assets/js/jquery.min.js"></script>
 <script src="https://aiv3portal.autoinspekt.com/report/assets/js/bootstrap.min.js"></script>
 <script src="https://aiv3portal.autoinspekt.com/report/assets/gallery/vendor/prettyphoto/js/prettyphoto.js"></script>
 <script src="https://aiv3portal.autoinspekt.com/report/assets/slider/js/lightslider.js"></script>
@@ -808,6 +808,6 @@ $('#myModal').on('hidden.bs.modal', function () {
   $('.lSNext').css('display','');
 })
 });
-</script> -->
+</script>
 
 </html>
