@@ -7,4 +7,5 @@ add your changes
 git add
 git pull origin main
 git commit -m "message"
+git commit -m "message"
 git push origin <branch name>
