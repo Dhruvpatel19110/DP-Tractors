@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirectgi
+from django.shortcuts import redirect, render
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 
