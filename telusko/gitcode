@@ -1,9 +1,9 @@
-
 git checkout main
 git fetch --all
-
-git add
 git pull origin main
-git commit -m "message"
-git commit -m "message"
+git checkout -b new_branch_name
+add your changes
+git add
+---git pull origin main
+---git commit -m "message"
 git push origin <branch name>
