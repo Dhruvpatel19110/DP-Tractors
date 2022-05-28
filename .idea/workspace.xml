@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="badd351d-2a0f-46a5-b57c-6e76f3b79a2b" name="Changes" comment="add a new print statement">
-      <change beforePath="$PROJECT_DIR$/DP-Tractors" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/telusko/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/telusko/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tajamaja/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/tajamaja/apps.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
