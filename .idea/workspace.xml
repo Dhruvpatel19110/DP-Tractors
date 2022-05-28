@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="badd351d-2a0f-46a5-b57c-6e76f3b79a2b" name="Changes" comment="add a new print statement">
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tajamaja/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/tajamaja/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv-env/Scripts" beforeDir="false" afterPath="$PROJECT_DIR$/venv-env/Scripts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +63,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
