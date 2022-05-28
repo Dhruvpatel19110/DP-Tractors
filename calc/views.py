@@ -1,5 +1,4 @@
 from pyexpat.errors import messages
-from tkinter import N
 from django.http import HttpResponse
 # from django.http import HttpResponse
 from django.urls import reverse_lazy
