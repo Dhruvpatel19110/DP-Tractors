@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from msilib.schema import Media
 import os
 import django_heroku
 from pathlib import Path
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jvt%q5s%f-9njnzqk!*u0d5l3i@ler5e-wxj_k@x$#2#7xz3gp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -32,18 +33,17 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
 
-    "whitenoise.runserver_nostatic",
-    "django.contrib.staticfiles",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'calc',
 ]
 
 MIDDLEWARE = [
-  
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,18 +78,12 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'tractor',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'root',
-        # 'HOST': 'localhost',
-        # 'PORT': '5432',
-        
-        'HOST': 'ec2-54-211-255-161.compute-1.amazonaws.com',
-        'NAME':'d2qujs3o2hlom2',
-        'USER':'lzmxtlzajroudg',
-        'PORT':5432,
-        'PASSWORD':'83ff139c0a59128c960d20036a68e2e3b554b1bce7d10e4216b40aedef8d0180'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tractor',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 # Password validation
@@ -125,7 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 
@@ -138,6 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
