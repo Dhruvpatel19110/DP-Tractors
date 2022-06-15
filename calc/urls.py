@@ -28,3 +28,5 @@ urlpatterns = [
     path("addgallery/", views.Add_Gallery, name='addgallery'),
 
 ]
+
+  
