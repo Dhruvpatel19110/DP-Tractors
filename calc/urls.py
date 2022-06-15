@@ -4,7 +4,6 @@ from calc import admin
 from telusko import settings
 from . import views
 from django.urls import path
-from django.templatetags.static import static
 
 app_name = 'calc'
 
