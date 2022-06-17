@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'tractor',
+        # 'NAME': 'tractor',    
         # 'USER': 'postgres',
         # 'PASSWORD': 'root',
         # 'HOST': 'localhost',
@@ -138,4 +138,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
