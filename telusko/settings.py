@@ -78,18 +78,18 @@ WSGI_APPLICATION = 'telusko.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tractor',    
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'tractor',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'root',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
         
-        # 'HOST': 'ec2-54-211-255-161.compute-1.amazonaws.com',
-        # 'NAME':'d2qujs3o2hlom2',
-        # 'USER':'lzmxtlzajroudg',
-        # 'PORT':5432,
-        # 'PASSWORD':'83ff139c0a59128c960d20036a68e2e3b554b1bce7d10e4216b40aedef8d0180'
+        'HOST': 'ec2-54-211-255-161.compute-1.amazonaws.com',
+        'NAME':'d2qujs3o2hlom2',
+        'USER':'lzmxtlzajroudg',
+        'PORT':5432,
+        'PASSWORD':'83ff139c0a59128c960d20036a68e2e3b554b1bce7d10e4216b40aedef8d0180'
     }
 }
 # Password validation

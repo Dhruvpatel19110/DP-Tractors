@@ -19,10 +19,6 @@ def stoke(request):
     return render(request, 'stoke.html')
 
 
-def Gallery(request):
-    return render(request, 'gallery.html')
-
-
 def Profile(request):
     return render(request, 'profile.html')
 
