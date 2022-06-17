@@ -7,8 +7,6 @@
     <list default="true" id="badd351d-2a0f-46a5-b57c-6e76f3b79a2b" name="Changes" comment="add a new print statement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DP-Tractors" beforeDir="false" afterPath="$PROJECT_DIR$/DP-Tractors" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basic.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
